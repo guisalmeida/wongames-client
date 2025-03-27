@@ -40,7 +40,7 @@ const GlobalStyles = createGlobalStyle`
 
   ${({ theme }) => css`
     html {
-      font-size: ${theme.font.sizes.medium};
+      font-size: 62.5%;
     }
 
     body {
