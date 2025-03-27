@@ -21,6 +21,7 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "styled-components": "^6.1.14",
+    "styled-icons": "^10.47.1",
     "styled-media-query": "^2.1.2"
   },
   "devDependencies": {
