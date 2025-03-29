@@ -10,4 +10,14 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {};
+export const Default: Story = {
+  args: {
+    userName: ''
+  },
+  parameters: {
+    layout: 'fullscreen',
+    backgrounds: {
+      default: 'dark'
+    }
+  }
+};
