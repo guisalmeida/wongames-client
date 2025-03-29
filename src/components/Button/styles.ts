@@ -2,8 +2,9 @@ import styled, { css, DefaultTheme } from 'styled-components';
 import { ButtonProps } from '.';
 
 type WrapperProps = {
-  hasIcon: boolean;
-} & Pick<ButtonProps, 'size' | '$fullWidth'>;
+  $hasIcon: boolean;
+  $fullWidth: boolean;
+} & Pick<ButtonProps, 'size'>;
 
 const wrapperModifiers = {
   small: (theme: DefaultTheme) => css`
@@ -39,7 +40,7 @@ const wrapperModifiers = {
 };
 
 export const Wrapper = styled.button<WrapperProps>`
-  ${({ theme, size, $fullWidth, hasIcon }) => css`
+  ${({ theme, size, $fullWidth, $hasIcon }) => css`
     background: linear-gradient(180deg, #ff5f5f 0%, #f062c0 50%);
     color: ${theme.colors.white};
     border: 0;
@@ -48,6 +49,6 @@ export const Wrapper = styled.button<WrapperProps>`
 
     ${!!size && wrapperModifiers[size](theme)};
     ${!!$fullWidth && wrapperModifiers.fullWidth()};
-    ${!!hasIcon && wrapperModifiers.withIcon(theme)};
+    ${!!$hasIcon && wrapperModifiers.withIcon(theme)};
   `}
 `;
