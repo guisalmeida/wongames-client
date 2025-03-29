@@ -28,7 +28,16 @@ export const LineLeft: Story = {
   args: {
     children: 'Heading',
     color: 'black',
-    $lineLeft: true
+    lineLeft: true
+  }
+};
+
+export const LineLeftSecondary: Story = {
+  args: {
+    children: 'Heading',
+    color: 'black',
+    lineLeft: true,
+    lineColor: 'secondary'
   }
 };
 
@@ -36,6 +45,15 @@ export const LineBottom: Story = {
   args: {
     children: 'Heading',
     color: 'black',
-    $lineBottom: true
+    lineBottom: true
+  }
+};
+
+export const LineBottomSecondary: Story = {
+  args: {
+    children: 'Heading',
+    color: 'black',
+    lineBottom: true,
+    lineColor: 'secondary'
   }
 };
