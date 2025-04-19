@@ -37,7 +37,7 @@ describe('<Button />', () => {
   });
 
   it('should render full witdh button', () => {
-    renderWithTheme(<Button $fullWidth>Buy now</Button>);
+    renderWithTheme(<Button fullWidth>Buy now</Button>);
 
     expect(screen.getByRole('button', { name: /Buy now/i })).toHaveStyle({
       width: '100%'
@@ -51,5 +51,18 @@ describe('<Button />', () => {
 
     expect(screen.getByText(/buy now/i)).toBeInTheDocument();
     expect(screen.getByTestId('icon')).toBeInTheDocument();
+  });
+
+  it('should render Button as a link', () => {
+    renderWithTheme(
+      <Button as="a" href="/link">
+        Buy now
+      </Button>
+    );
+
+    expect(screen.getByRole('link', { name: /buy now/i })).toHaveAttribute(
+      'href',
+      '/link'
+    );
   });
 });
