@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Ribbon /> should match with the snapshot 1`] = `
+.c0 {
+  min-width: 12.5rem;
+  position: absolute;
+  top: 1.6rem;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  color: #FAFAFA;
+  font-size: 1.4rem;
+  height: 3.6rem;
+  padding: 0 2.4rem;
+  right: -2rem;
+  background-color: #F231A5;
+}
+
+.c0::before {
+  content: '';
+  display: block;
+  position: absolute;
+  right: 0;
+  border-style: solid;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  border-bottom-width: 1rem;
+}
+
+.c0::before {
+  top: 3.6rem;
+  border-top-width: 1rem;
+  border-right-width: 2rem;
+}
+
+.c0::before {
+  border-left: 0 solid #F231A5;
+  border-top-color: #F231A5;
+  filter: brightness(80%);
+}
+
+<div
+  class="c0"
+  color="primary"
+>
+  Best Seller
+</div>
+`;
