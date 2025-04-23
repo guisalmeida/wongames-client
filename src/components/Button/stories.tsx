@@ -12,7 +12,7 @@ const meta = {
     children: {
       type: 'string'
     },
-    $fullWidth: {
+    fullWidth: {
       type: 'boolean'
     },
     icon: {
@@ -50,7 +50,7 @@ export const Large: Story = {
 
 export const FullWidth: Story = {
   args: {
-    $fullWidth: true,
+    fullWidth: true,
     children: 'Buy now'
   },
   render: (args) => <Button {...args} />
@@ -61,6 +61,16 @@ export const withIcon: Story = {
     size: 'small',
     children: 'Buy now',
     icon: <AddShoppingCart />
+  },
+  render: (args) => <Button {...args} />
+};
+
+export const asLink: Story = {
+  args: {
+    size: 'large',
+    children: 'Buy now',
+    as: 'a',
+    href: '/link'
   },
   render: (args) => <Button {...args} />
 };
