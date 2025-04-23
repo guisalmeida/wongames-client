@@ -24,5 +24,33 @@ export const Default: Story = {
       default: 'dark'
     }
   },
-  render: (args) => <Banner {...args} />
+  render: (args) => (
+    <div style={{ maxWidth: '94rem', margin: '0 auto' }}>
+      <Banner {...args} />
+    </div>
+  )
+};
+
+export const WithRibbon: Story = {
+  args: {
+    img: 'https://images.unsplash.com/photo-1558980394-4c7c9299fe96',
+    title: 'Defy death',
+    subtitle: '<p>Play the new <strong>CrashLands</strong> season',
+    buttonLabel: 'Buy now',
+    buttonLink: '/games/defy-death',
+    ribbon: '20% OFF',
+    ribbonSize: 'normal',
+    ribbonColor: 'primary'
+  },
+  parameters: {
+    layout: 'fullscreen',
+    backgrounds: {
+      default: 'dark'
+    }
+  },
+  render: (args) => (
+    <div style={{ maxWidth: '94rem', margin: '0 auto' }}>
+      <Banner {...args} />
+    </div>
+  )
 };

@@ -25,4 +25,29 @@ describe('<Banner />', () => {
       screen.getByRole('img', { name: /Defy death/i })
     ).toBeInTheDocument();
   });
+
+  it('should render a Ribbon', () => {
+    renderWithTheme(
+      <Banner
+        {...bannerPropsMock}
+        ribbon="My Ribbon"
+        ribbonSize="small"
+        ribbonColor="secondary"
+      />
+    );
+
+    const ribbon = screen.getByText(/My Ribbon/i);
+
+    expect(ribbon).toBeInTheDocument();
+    expect(ribbon).toHaveStyle({ backgroundColor: '#3CD3C1' });
+    expect(ribbon).toHaveStyle({
+      height: '2.6rem',
+      fontSize: '1.2rem'
+    });
+  });
+
+  it('should match with the snapshot', () => {
+    const { container } = renderWithTheme(<Banner {...bannerPropsMock} />);
+    expect(container.firstChild).toMatchSnapshot();
+  });
 });
