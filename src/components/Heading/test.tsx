@@ -79,4 +79,9 @@ describe('<Heading />', () => {
       modifier: '::after'
     });
   });
+
+  it('should match with the snapshot', () => {
+    const { container } = renderWithTheme(<Heading>Won Games</Heading>);
+    expect(container.firstChild).toMatchSnapshot();
+  });
 });
