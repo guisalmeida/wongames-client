@@ -12,11 +12,31 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    title: 'Read Dead it’s back',
+    title: 'Read Dead is back!',
     subtitle: 'Come see John’s new adventures',
     backgroundImage: '/img/red-dead-img.jpg',
     buttonLabel: 'Buy now',
-    buttonLink: '/rdr2'
+    buttonLink: '/games/rdr2'
   },
-  render: (args) => <Highlight {...args} />
+  render: (args) => (
+    <div style={{ maxWidth: '104rem' }}>
+      <Highlight {...args} />
+    </div>
+  )
+};
+
+export const WithFloatImage: Story = {
+  args: {
+    title: 'Read Dead is back!',
+    subtitle: 'Come see John’s new adventures',
+    backgroundImage: '/img/red-dead-img.jpg',
+    buttonLabel: 'Buy now',
+    buttonLink: '/games/rdr2',
+    floatImage: '/img/red-dead-float.png'
+  },
+  render: (args) => (
+    <div style={{ maxWidth: '104rem' }}>
+      <Highlight {...args} />
+    </div>
+  )
 };
