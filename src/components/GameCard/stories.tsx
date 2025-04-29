@@ -32,3 +32,16 @@ export const Default: Story = {
     </div>
   )
 };
+
+export const WithRibbon: Story = {
+  args: {
+    ribbon: '20% OFF',
+    ribbonSize: 'normal',
+    ribbonColor: 'primary'
+  },
+  render: (args) => (
+    <div style={{ width: '30rem' }}>
+      <GameCard {...args} />
+    </div>
+  )
+};
