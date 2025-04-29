@@ -1,7 +1,9 @@
-import { render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 
 import GameCard, { GameCardProps } from '.';
 import { renderWithTheme } from '../../utils/tests/helpers';
+import { TextDecoration } from 'styled-icons/zondicons';
+import theme from '../../styles/theme';
 
 describe('<GameCard />', () => {
   const gameCardPropsMock: GameCardProps = {
@@ -30,14 +32,42 @@ describe('<GameCard />', () => {
   });
 
   it('should render price in label', () => {
-    // renderiza o componente
-    // preço não tenha line-through
-    // preço tenha o background secundário
+    renderWithTheme(<GameCard {...gameCardPropsMock} />);
+
+    const price = screen.getByText('R$ 235,00');
+
+    expect(price).not.toHaveStyle({ textDecoration: 'line-through' });
+    expect(price).toHaveStyle({ backgroundColor: theme.colors.secondary });
   });
 
   it('should render a line-through in price when promotional', () => {
-    // renderiza o componente (COM promotionalPrice) // 200 reais // 15 reais
-    // preço tenha line-through (200)
-    // preço novo promocional não vai ter line-through (15)
+    renderWithTheme(
+      <GameCard {...gameCardPropsMock} promotionalPrice="R$ 200,00" />
+    );
+
+    const oldPrice = screen.getByText('R$ 235,00');
+    const promotionalPrice = screen.getByText('R$ 200,00');
+
+    expect(oldPrice).toHaveStyle({ textDecoration: 'line-through' });
+    expect(promotionalPrice).not.toHaveStyle({
+      textDecoration: 'line-through'
+    });
+  });
+
+  it('should render a filled Favorite icon when favorite is true', () => {
+    renderWithTheme(<GameCard {...gameCardPropsMock} favorite />);
+
+    expect(screen.getByLabelText(/remove from wishlist/i)).toBeInTheDocument();
+  });
+
+  it('should call onFav method when favorite is clicked', () => {
+    const onFavSpy = jest.fn();
+    renderWithTheme(
+      <GameCard {...gameCardPropsMock} favorite onFav={onFavSpy} />
+    );
+
+    fireEvent.click(screen.getAllByRole('button')[0]);
+
+    expect(onFavSpy).toHaveBeenCalled();
   });
 });

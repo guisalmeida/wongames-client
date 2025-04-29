@@ -15,6 +15,9 @@ const meta = {
     backgrounds: {
       default: 'dark'
     }
+  },
+  argTypes: {
+    onFav: { action: 'clicked' }
   }
 } satisfies Meta<typeof GameCard>;
 
