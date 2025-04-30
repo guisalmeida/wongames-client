@@ -1,3 +1,4 @@
+import '../../../.jest/media-match-mock';
 import SlickSlider, { Settings } from 'react-slick';
 
 import * as S from './styles';
