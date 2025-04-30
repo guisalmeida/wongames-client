@@ -12,6 +12,11 @@ const config: StorybookConfig = {
     autodocs: true
   },
   webpackFinal: (config) => {
+    // Exclude Jest mock files
+    config.module?.rules?.push({
+      test: /\.jest\.(js|ts)$/,
+      use: 'null-loader'
+    });
     config.resolve?.modules?.push(`${process.cwd()}/src`);
     return config;
   }
