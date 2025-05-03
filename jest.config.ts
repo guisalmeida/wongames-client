@@ -7,6 +7,7 @@ import type { Config } from 'jest';
 
 const config: Config = {
   modulePaths: ['<rootDir>/src/'],
+  prettierPath: '<rootDir>/node_modules/prettier',
 
   // The test environment that will be used for testing
   testEnvironment: 'jsdom',
