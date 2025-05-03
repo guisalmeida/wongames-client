@@ -3,7 +3,12 @@ import Logo from '.';
 
 const meta = {
   title: 'Logo',
-  component: Logo
+  component: Logo,
+  parameters: {
+    backgrounds: {
+      default: 'won-dark'
+    }
+  }
 } satisfies Meta<typeof Logo>;
 
 export default meta;

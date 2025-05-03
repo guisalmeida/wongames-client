@@ -33,7 +33,7 @@ const meta = {
   parameters: {
     layout: 'fullscreen',
     backgrounds: {
-      default: 'dark'
+      default: 'won-dark'
     }
   }
 } satisfies Meta<typeof BannerSlider>;
