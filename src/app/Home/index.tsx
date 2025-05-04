@@ -3,7 +3,10 @@ import Footer from '../../components/Footer';
 import Heading from '../../components/Heading';
 import Menu from '../../components/Menu';
 
-import * as S from './styles';
+// https://nextjs.org/docs/app/guides/migrating/app-router-migration#static-site-generation-getstaticprops
+function getProjects() {
+  return 'projects';
+}
 
 const Home = () => (
   <section>
@@ -13,7 +16,7 @@ const Home = () => (
 
     <Container>
       <Heading lineLeft lineColor="secondary" color="black">
-        News
+        {getProjects()}
       </Heading>
     </Container>
 
